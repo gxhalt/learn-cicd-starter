@@ -20,6 +20,12 @@ jobs:
 
       - name: Run Style Checks
         run: test -z $(go fmt ./...)
+
+      - name: Run Static Checks
+        uses: dominikh/staticcheck-action@v1
+        with:
+          version: "latest"
+
   tests:
     name: Tests
     runs-on: ubuntu-latest
